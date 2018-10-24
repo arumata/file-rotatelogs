@@ -123,8 +123,14 @@ func (rl *RotateLogs) Write(p []byte) (n int, err error) {
 	if err != nil {
 		return 0, errors.Wrap(err, `failed to acquite target io.Writer`)
 	}
+	n, err = out.Write(p)
+	if err == nil {
+		if fh, ok := out.(*os.File); ok {
+			fh.Sync()
+		}
+	}
 
-	return out.Write(p)
+	return
 }
 
 // must be locked during this operation
