@@ -5,7 +5,7 @@ import (
 	"sync"
 	"time"
 
-	strftime "github.com/arumata/strftime"
+	strftime "github.com/lestrrat-go/strftime"
 )
 
 type Handler interface {

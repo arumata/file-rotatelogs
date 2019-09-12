@@ -14,7 +14,7 @@ import (
 	"sync"
 	"time"
 
-	strftime "github.com/arumata/strftime"
+	strftime "github.com/lestrrat-go/strftime"
 	"github.com/pkg/errors"
 )
 
